@@ -1,6 +1,7 @@
 package PlacementPrograms;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrimeNumbers {
@@ -11,19 +12,21 @@ public class PrimeNumbers {
 		int n=sc.nextInt();
 		for (int i = m; i <n; i++)
 		{
-		for (int j = 1; j <=i; j++)
-		{
-		if (i%j==0)
-		{
-		arrayList.add(i);
-		}
+		if (isPrime(i)) {
+			System.out.println(i);
 		}
 		
 		}
-		for(int i=0;i<arrayList.size();i+=2) {
-			System.out.println(arrayList.get(i));
-	}
+		
 	
 
 }
+	public static boolean isPrime(int n) {
+		for(int i=2;i<n;i++) {
+			if(n%i==0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
